@@ -1,0 +1,718 @@
+
+/* ========================================
+   1. FONTES E VARIÁVEIS GLOBAIS
+======================================== */
+
+/* Variáveis globais */
+:root {
+  color-scheme: light;
+
+  --ink: #172033;
+  --muted: #64708a;
+
+  --navy: #10172a;
+
+  --purple: #6747e8;
+  --purple-dark: #5234ce;
+
+  --line: #e6e9f2;
+
+  --surface: #ffffff;
+  --canvas: #f5f6fb;
+}
+
+/* ========================================
+   2. CONFIGURAÇÕES GERAIS
+======================================== */
+
+/* Rolagem suave quando permitida pelo usuário */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Modelo de dimensionamento */
+* {
+  box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+  margin: 0;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 0,
+      rgb(103 71 232 / 9%),
+      transparent 34rem
+    ),
+    var(--canvas);
+
+  color: var(--ink);
+
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.6;
+}
+
+/* Tipografia dos títulos */
+h1,
+h2,
+h3 {
+  font-family: "Manrope", sans-serif;
+}
+
+/* ========================================
+   3. CABEÇALHO
+======================================== */
+
+header {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+
+  display: flex;
+
+  min-height: 76px;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1.5rem;
+
+  padding: 0.75rem max(5vw, calc((100% - 1120px) / 2));
+
+  background: var(--navy);
+
+  box-shadow: 0 8px 24px rgb(16 23 42 / 14%);
+}
+
+/* Marca */
+.brand {
+  display: inline-flex;
+
+  flex: 0 0 auto;
+
+  align-items: center;
+}
+
+/* Logo */
+#logo {
+  display: block;
+
+  width: 148px;
+  height: auto;
+}
+
+/* Título principal */
+h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-weight: 700;
+
+  letter-spacing: -0.035em;
+
+  text-align: center;
+}
+
+/* Navegação */
+nav ul {
+  display: flex;
+
+  align-items: center;
+
+  gap: clamp(0.5rem, 2vw, 1.5rem);
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+/* Links da navegação */
+nav a {
+  display: inline-block;
+
+  padding: 0.5rem 0.25rem;
+
+  color: #d7d9e3;
+
+  font-size: 0.84rem;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: color 160ms ease;
+}
+
+/* Interação com os links */
+nav a:hover,
+nav a:focus-visible {
+  color: #b7aaff;
+}
+
+/* ========================================
+   4. ACESSIBILIDADE E FOCO
+======================================== */
+
+/* Indicadores de foco para navegação por teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #9c89ff;
+  outline-offset: 3px;
+}
+
+/* ========================================
+   5. CONTEÚDO PRINCIPAL
+======================================== */
+
+main {
+  width: min(100% - 2rem, 760px);
+
+  margin: 0 auto;
+
+  padding: 4.25rem 0 3rem;
+}
+
+/* Introdução */
+.intro {
+  margin: 0 auto 2rem;
+
+  text-align: center;
+}
+
+/* Parágrafos da introdução */
+.intro p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 1.05rem;
+}
+
+/* Texto de destaque da introdução */
+.intro .eyebrow {
+  margin-bottom: 0.55rem;
+
+  color: var(--purple);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ========================================
+   6. FORMULÁRIO E SEÇÕES
+======================================== */
+
+/* Organização do formulário */
+form {
+  display: grid;
+
+  gap: 1.25rem;
+}
+
+/* Cartões das seções */
+.quiz-section {
+  padding: clamp(1.25rem, 4vw, 2rem);
+
+  border: 1px solid rgb(230 233 242 / 85%);
+  border-radius: 20px;
+
+  background: var(--surface);
+
+  box-shadow: 0 12px 32px rgb(23 32 51 / 5%);
+
+  scroll-margin-top: 100px;
+}
+
+/* Títulos das seções */
+h2 {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.8rem;
+
+  margin: 0;
+
+  font-size: clamp(1.15rem, 3vw, 1.45rem);
+  font-weight: 800;
+
+  letter-spacing: -0.04em;
+}
+
+/* Numeração das seções */
+.section-number {
+  display: inline-grid;
+
+  width: 2.15rem;
+  height: 2.15rem;
+
+  flex: 0 0 auto;
+
+  place-items: center;
+
+  border-radius: 10px;
+
+  background: #f0edff;
+
+  color: var(--purple);
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  letter-spacing: 0;
+}
+
+/* Descrição das seções */
+.section-description {
+  margin: 0.55rem 0 1.3rem 2.95rem;
+
+  color: var(--muted);
+
+  font-size: 0.9rem;
+}
+
+/* ========================================
+   7. CAMPOS DE IDENTIFICAÇÃO
+======================================== */
+
+/* Organização dos campos */
+.info {
+  display: grid;
+
+  grid-template-columns:
+    minmax(150px, 0.8fr)
+    minmax(0, 1.5fr);
+
+  align-items: center;
+
+  gap: 0.75rem 1rem;
+
+  margin-top: 1rem;
+}
+
+/* Rótulos dos campos */
+.info label,
+.formrow label {
+  font-size: 0.91rem;
+  font-weight: 600;
+}
+
+/* Estilização geral dos campos */
+input,
+select,
+textarea {
+  width: 100%;
+  min-height: 46px;
+
+  padding: 0.7rem 0.85rem;
+
+  border: 1px solid #dfe3ed;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: var(--ink);
+
+  font: inherit;
+
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+/* Texto dos placeholders */
+input::placeholder,
+textarea::placeholder {
+  color: #9aa2b3;
+}
+
+/* Estado de foco dos campos */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--purple);
+
+  box-shadow: 0 0 0 3px rgb(103 71 232 / 12%);
+}
+
+/* ========================================
+   8. PERGUNTAS
+======================================== */
+
+/* Blocos das perguntas */
+.question-block {
+  margin-top: 1.3rem;
+
+  padding: 1.15rem 1.25rem;
+
+  border: 1px solid var(--line);
+  border-radius: 14px;
+
+  background: #fcfcff;
+}
+
+/* Títulos das perguntas */
+h3 {
+  margin: 0 0 0.55rem;
+
+  color: var(--purple);
+
+  font-size: 0.76rem;
+  font-weight: 700;
+
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+/* Fieldset */
+.question {
+  min-width: 0;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+}
+
+/* Legenda das perguntas */
+.question legend {
+  width: 100%;
+
+  padding: 0;
+
+  font-weight: 600;
+}
+
+/* ========================================
+   9. ELEMENTOS DE CÓDIGO
+======================================== */
+
+code {
+  padding: 0.1em 0.38em;
+
+  border-radius: 5px;
+
+  background: #f0edff;
+
+  color: #5137c2;
+
+  font-family: "Cascadia Code", Consolas, monospace;
+
+  font-size: 0.9em;
+}
+
+/* ========================================
+   10. ALTERNATIVAS DAS PERGUNTAS
+======================================== */
+
+/* Lista de respostas */
+.answers-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.7rem;
+
+  margin: 1rem 0 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+/* Alternativas */
+.answers-list label {
+  display: inline-flex;
+
+  min-width: 125px;
+
+  align-items: center;
+
+  gap: 0.55rem;
+
+  padding: 0.65rem 0.85rem;
+
+  border: 1px solid var(--line);
+  border-radius: 9px;
+
+  color: #46516a;
+
+  cursor: pointer;
+
+  font-size: 0.91rem;
+
+  transition:
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+/* Destaque da alternativa selecionada */
+.answers-list label:has(input:checked) {
+  border-color: #9b88ff;
+
+  background: #f5f2ff;
+
+  color: var(--purple-dark);
+}
+
+/* Radio buttons */
+.answers-list input {
+  width: 1rem;
+  min-height: 1rem;
+
+  margin: 0;
+
+  accent-color: var(--purple);
+}
+
+/* ========================================
+   11. PERGUNTAS DE CSS
+======================================== */
+
+/* Organização dos campos */
+.formrow {
+  display: grid;
+
+  gap: 0.65rem;
+
+  margin-top: 1.3rem;
+}
+
+/* Ajustes dos blocos dentro da seção CSS */
+.formrow .question-block {
+  margin-top: 0;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+}
+
+/* Espaçamento entre os campos */
+.answer + .question-block {
+  margin-top: 0.8rem;
+}
+
+/* Área de texto */
+textarea {
+  min-height: 120px;
+
+  resize: vertical;
+}
+
+/* ========================================
+   12. BOTÃO DE ENVIO
+======================================== */
+
+button {
+  display: flex;
+
+  min-height: 56px;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.7rem;
+
+  margin: 0.5rem auto 0;
+
+  padding: 0.85rem 1.5rem;
+
+  border: 0;
+  border-radius: 12px;
+
+  background: var(--purple);
+
+  box-shadow: 0 8px 18px rgb(103 71 232 / 22%);
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font: inherit;
+  font-weight: 700;
+
+  transition:
+    transform 160ms ease,
+    background 160ms ease,
+    box-shadow 160ms ease;
+}
+
+/* Efeito ao passar o mouse */
+button:hover {
+  transform: translateY(-2px);
+
+  background: var(--purple-dark);
+
+  box-shadow: 0 10px 22px rgb(103 71 232 / 28%);
+}
+
+/* Seta do botão */
+button span {
+  font-size: 1.25rem;
+
+  line-height: 1;
+}
+
+/* ========================================
+   13. RODAPÉ
+======================================== */
+
+footer {
+  padding: 2rem 1rem;
+
+  background: var(--navy);
+
+  color: #d7d9e3;
+
+  text-align: center;
+}
+
+/* Mensagem do rodapé */
+footer > p {
+  margin: 0 0 0.75rem;
+
+  color: #ffffff;
+
+  font-weight: 600;
+}
+
+/* Créditos */
+.credits {
+  color: #aeb5c8;
+
+  font-size: 0.85rem;
+
+  line-height: 1.8;
+}
+
+/* Parágrafos dos créditos */
+.credits p {
+  margin: 0;
+}
+
+/* Link do rodapé */
+footer a {
+  color: #c2b6ff;
+
+  font-weight: 600;
+
+  text-underline-offset: 3px;
+}
+
+/* ========================================
+   14. RESPONSIVIDADE
+======================================== */
+
+/* Tablets e dispositivos menores */
+@media (max-width: 680px) {
+  header {
+    position: static;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 0.45rem 1rem;
+
+    padding: 0.9rem 1rem 0.65rem;
+  }
+
+  #logo {
+    width: 122px;
+  }
+
+  h1 {
+    text-align: left;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav ul {
+    justify-content: center;
+
+    gap: 1.3rem;
+  }
+
+  nav a {
+    padding: 0.35rem 0;
+  }
+
+  main {
+    padding-top: 2.5rem;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 480px) {
+  /* Campos de identificação em uma coluna */
+  .info {
+    grid-template-columns: 1fr;
+
+    gap: 0.35rem;
+  }
+
+  /* Espaçamento entre os campos */
+  .info + .info {
+    margin-top: 0.8rem;
+  }
+
+  /* Descrição das seções */
+  .section-description {
+    margin-left: 0;
+  }
+
+  /* Blocos de perguntas */
+  .question-block {
+    padding: 1rem;
+  }
+
+  /* Alternativas em coluna */
+  .answers-list {
+    flex-direction: column;
+  }
+
+  /* Alternativas ocupando toda a largura */
+  .answers-list label {
+    width: 100%;
+  }
+
+  /* Botão ocupando toda a largura */
+  button {
+    width: 100%;
+  }
+}
+
+/* ========================================
+   15. PREFERÊNCIA POR MOVIMENTO REDUZIDO
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  nav a,
+  input,
+  select,
+  textarea,
+  .answers-list label,
+  button {
+    transition: none;
+  }
+
+  button:hover {
+    transform: none;
+  }
+}

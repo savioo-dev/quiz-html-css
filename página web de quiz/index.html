@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Teste seus conhecimentos sobre os fundamentos de HTML e CSS com este quiz."
+    />
+
+    <meta name="theme-color" content="#10172a" />
+
+    <title>Quiz de HTML e CSS | Teste seus conhecimentos</title>
+
+    <!-- Conexão antecipada com o Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+
+    <!-- Folha de estilos do Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Cabeçalho -->
+    <header>
+      <a
+        class="brand"
+        href="#inicio"
+        aria-label="Quiz de HTML e CSS — voltar ao início"
+      >
+        <img
+          id="logo"
+          src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg"
+          alt="Logo do freeCodeCamp"
+          width="148"
+          height="32"
+        />
+      </a>
+
+      <h1 id="inicio">Quiz de HTML e CSS</h1>
+
+      <!-- Navegação principal -->
+      <nav aria-label="Navegação principal do quiz">
+        <ul>
+          <li><a href="#student-info">Seus dados</a></li>
+          <li><a href="#html-questions">HTML</a></li>
+          <li><a href="#css-questions">CSS</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main>
+      <!-- Apresentação do quiz -->
+      <div class="intro">
+        <p class="eyebrow">Aprender também é praticar</p>
+
+        <p>
+          Responda às perguntas e teste o que você já sabe
+          sobre desenvolvimento web.
+        </p>
+      </div>
+
+      <!-- Formulário do quiz -->
+      <form>
+        <!-- Seção de identificação -->
+        <section
+          class="quiz-section"
+          aria-labelledby="student-info"
+        >
+          <h2 id="student-info">
+            <span class="section-number" aria-hidden="true">01</span>
+            Seus dados
+          </h2>
+
+          <p class="section-description">
+            Conte um pouco sobre você antes de começar.
+          </p>
+
+          <div class="info">
+            <label for="student-name">Nome</label>
+
+            <input
+              type="text"
+              name="student-name"
+              id="student-name"
+              autocomplete="name"
+              placeholder="Seu nome"
+            />
+          </div>
+
+          <div class="info">
+            <label for="student-email">E-mail</label>
+
+            <input
+              type="email"
+              name="student-email"
+              id="student-email"
+              autocomplete="email"
+              placeholder="voce@exemplo.com"
+            />
+          </div>
+
+          <div class="info">
+            <label for="birth-date">Data de nascimento</label>
+
+            <input
+              type="date"
+              name="birth-date"
+              id="birth-date"
+            />
+          </div>
+        </section>
+
+        <!-- Seção de perguntas HTML -->
+        <section
+          class="quiz-section"
+          aria-labelledby="html-questions"
+        >
+          <h2 id="html-questions">
+            <span class="section-number" aria-hidden="true">02</span>
+            Fundamentos de HTML
+          </h2>
+
+          <p class="section-description">
+            Marque a alternativa que considera correta.
+          </p>
+
+          <!-- Questão 1 -->
+          <div class="question-block">
+            <h3>Questão 1</h3>
+
+            <fieldset class="question">
+              <legend>
+                O elemento <code>legend</code> representa uma legenda
+                para o conteúdo do elemento <code>fieldset</code> pai.
+              </legend>
+
+              <ul class="answers-list">
+                <li>
+                  <label for="q1-a1">
+                    <input
+                      type="radio"
+                      id="q1-a1"
+                      name="q1"
+                      value="true"
+                      required
+                    />
+                    Verdadeiro
+                  </label>
+                </li>
+
+                <li>
+                  <label for="q1-a2">
+                    <input
+                      type="radio"
+                      id="q1-a2"
+                      name="q1"
+                      value="false"
+                    />
+                    Falso
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+
+          <!-- Questão 2 -->
+          <div class="question-block">
+            <h3>Questão 2</h3>
+
+            <fieldset class="question">
+              <legend>
+                Quando um elemento <code>label</code> envolve um
+                <code>input</code>, é obrigatório usar o atributo
+                <code>for</code> com o mesmo valor do
+                <code>id</code> do campo.
+              </legend>
+
+              <ul class="answers-list">
+                <li>
+                  <label for="q2-a1">
+                    <input
+                      type="radio"
+                      id="q2-a1"
+                      name="q2"
+                      value="true"
+                      required
+                    />
+                    Verdadeiro
+                  </label>
+                </li>
+
+                <li>
+                  <label for="q2-a2">
+                    <input
+                      type="radio"
+                      id="q2-a2"
+                      name="q2"
+                      value="false"
+                    />
+                    Falso
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+        </section>
+
+        <!-- Seção de perguntas CSS -->
+        <section
+          class="quiz-section"
+          aria-labelledby="css-questions"
+        >
+          <h2 id="css-questions">
+            <span class="section-number" aria-hidden="true">03</span>
+            Fundamentos de CSS
+          </h2>
+
+          <p class="section-description">
+            Mais uma pergunta para fechar o quiz.
+          </p>
+
+          <div class="formrow">
+            <!-- Questão 3 -->
+            <div class="question-block">
+              <label for="selector">
+                A propriedade <code>margin</code> do CSS pode aceitar
+                valores negativos?
+              </label>
+            </div>
+
+            <div class="answer">
+              <select name="selector" id="selector" required>
+                <option value="">Selecione uma alternativa</option>
+                <option value="yes">Sim</option>
+                <option value="no">Não</option>
+              </select>
+            </div>
+
+            <!-- Campo para dúvidas -->
+            <div class="question-block">
+              <label for="css-textarea">
+                Ficou com alguma dúvida? Escreva aqui (opcional).
+              </label>
+            </div>
+
+            <div class="answer">
+              <textarea
+                id="css-textarea"
+                name="css-questions"
+                rows="5"
+                placeholder="Compartilhe sua dúvida..."
+              ></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- Botão de envio -->
+        <button type="submit">
+          Enviar respostas
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+      <p>Continue aprendendo, uma linha de código por vez.</p>
+
+      <div class="credits">
+        <a
+          href="https://www.freecodecamp.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          freeCodeCamp
+        </a>
+
+        <p>San Francisco, Califórnia</p>
+        <p>Estados Unidos</p>
+      </div>
+    </footer>
+  </body>
+</html>
